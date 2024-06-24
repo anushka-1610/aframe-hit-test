@@ -143,7 +143,9 @@
 </head>
 <body>
 
-<a-scene webxr="requiredFeatures: hit-test,local-floor;">
+<a-scene
+	ar-hit-test 
+	webxr="requiredFeatures: hit-test,local-floor;">
 	<a-assets>
 		<!-- Model source: https://sketchfab.com/3d-models/spinosaurus-2135501583704537907645bf723685e7
              Model author: https://sketchfab.com/VapTor
@@ -191,7 +193,7 @@
 			 position="-2 4 2">
 	</a-light>
 
-	<a-entity gltf-model="#reticle" scale="0.8 0.8 0.8" ar-hit-test></a-entity>
+	<a-entity gltf-model="#reticle" scale="0.8 0.8 0.8"></a-entity>
 </a-scene>
 
 <div id="text">
