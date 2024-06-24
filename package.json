@@ -1,0 +1,11 @@
+{
+  "name": "aframe-hit-test",
+  "version": "1.0.0",
+  "description": "It has been added by default in A-Frame. Check https://medium.com/samsung-internet-dev/use-new-augmented-reality-features-with-just-a-few-lines-of-code-with-webxr-and-aframe-c6f3f5789345",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
