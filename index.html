@@ -6,54 +6,8 @@
     <title>Tutorial WebXR Módulo hit-test</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="script.js"></script>
-    <style>
-      .ar-button {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 10px 20px;
-        background: teal;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <a-scene hit-test-system="reticle: #reticle; target: #bulbasaur" 
-             webxr="requiredFeatures: hit-test, local-floor;"
-             webxr-ar-button>
-      <a-assets>
-        <a-asset-item id="bulbasaur-model" src="./model/fridge_bake_6.glb"></a-asset-item>
-      </a-assets>
-
-      <a-entity id="bulbasaur">
-        <a-gltf-model position="0 0 0.2" scale="0.2 0.2 0.2" src="#bulbasaur-model"></a-gltf-model>
-      </a-entity>
-
-      <a-entity id="reticle">
-        <a-ring color="teal" radius-inner="0.15" radius-outer="0.2" rotation="-90 0 0">
-          <a-circle color="teal" radius="0.05"></a-circle>
-        </a-ring>
-      </a-entity>
-    </a-scene>
-  </body>
-</html>
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Tutorial WebXR Módulo hit-test</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></script>
+<link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css">
     <script src="script.js"></script>
   </head>
   <body>
@@ -67,6 +21,14 @@
         <a-gltf-model position="0 0 0.2" scale="0.2 0.2 0.2" src="#bulbasaur-model"></a-gltf-model>
       </a-entity>
 
+      <ar-button
+    src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb"
+    ios-src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.usdz"
+    link="https://www.nasa.gov/"
+    title="A 3D model of an astronaut">
+      See in Augmented Reality 
+</ar-button>
+
       <a-entity id="reticle" >
         <a-ring color="teal" radius-inner="0.15" radius-outer="0.2" rotation="-90 0 0">
           <a-circle  color="teal" radius="0.05" ></a-circle>
@@ -74,4 +36,4 @@
       <a-entity>
     </a-scene>
   </body>
-</html> -->
+</html>
