@@ -6,12 +6,27 @@
     <title>Tutorial WebXR Módulo hit-test</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/webxr-polyfill@latest/build/webxr-polyfill.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
     <script src="script.js"></script>
+    <style>
+      .ar-button {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        background: teal;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <a-scene hit-test-system="reticle: #reticle; target: #bulbasaur" 
-             webxr="requiredFeatures: hit-test, local-floor;">
+             webxr="requiredFeatures: hit-test, local-floor;"
+             webxr-ar-button>
       <a-assets>
         <a-asset-item id="bulbasaur-model" src="./model/fridge_bake_6.glb"></a-asset-item>
       </a-assets>
@@ -28,6 +43,7 @@
     </a-scene>
   </body>
 </html>
+
 
 
 <!-- <!DOCTYPE html>

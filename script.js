@@ -12,24 +12,18 @@ AFRAME.registerSystem("hit-test-system", {
       this.target.setAttribute("visible", "false");
 
       this.session = this.el.sceneEl.renderer.xr.getSession();
-      this.el.sceneEl.renderer.xr.addEventListener(
-        "sessionstart",
-        async (ev) => {
-          this.viewerSpace = await this.session.requestReferenceSpace("viewer");
-          this.refSpace = this.el.sceneEl.renderer.xr.getReferenceSpace();
-          this.xrHitTestSource = await this.session.requestHitTestSource({
-            space: this.viewerSpace
-          });
-        }
-      );
+      this.el.sceneEl.renderer.xr.addEventListener("sessionstart", async (ev) => {
+        this.viewerSpace = await this.session.requestReferenceSpace("viewer");
+        this.refSpace = this.el.sceneEl.renderer.xr.getReferenceSpace();
+        this.xrHitTestSource = await this.session.requestHitTestSource({
+          space: this.viewerSpace
+        });
+      });
 
       this.session.addEventListener("select", (e) => {
         if (!this.reticle.getAttribute("visible")) return;
         this.target.setAttribute("visible", "true");
-        this.target.setAttribute(
-          "position",
-          this.reticle.getAttribute("position")
-        );
+        this.target.setAttribute("position", this.reticle.getAttribute("position"));
       });
     });
   },
@@ -45,17 +39,15 @@ AFRAME.registerSystem("hit-test-system", {
       if (hitTestResults.length > 0) {
         const hitTestPose = hitTestResults[0].getPose(this.refSpace);
         ["x", "y", "z"].forEach((axis) => {
-          this.reticle.object3D.position[axis] =
-            hitTestPose.transform.position[axis];
+          this.reticle.object3D.position[axis] = hitTestPose.transform.position[axis];
         });
-        this.reticle.object3D.quaternion.copy(
-          hitTestPose.transform.orientation
-        );
+        this.reticle.object3D.quaternion.copy(hitTestPose.transform.orientation);
         this.reticle.setAttribute("visible", "true");
       }
     }
   }
 });
+
 
 
 
